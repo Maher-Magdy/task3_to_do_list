@@ -1,10 +1,12 @@
 #include "qabstractlistmodel_data.h"
+//for linker error
+//QList<QString> QAbstractListModel_Data::m_data;
 //construtor
 QAbstractListModel_Data::QAbstractListModel_Data(QObject *parent)
     : QAbstractListModel(parent)
 {
     // initialize our data (QList<QString>)
-    m_data.push_back("test");
+    //m_data.push_back("test");m_data.push_back("test");m_data.push_back("test");
 
 }
 //destructor
@@ -44,11 +46,13 @@ QVariant QAbstractListModel_Data::data(const QModelIndex &index, int role) const
     // The view asked for other data, just return an empty QVariant
     return QVariant();
 }
- void QAbstractListModel_Data::insert(QString item)
+   void QAbstractListModel_Data::insert(QString item)
 {
     if(item!="")
     {
-        //m_data.push_back(item);
+        m_data.push_back(item);
+        //emit dataChanged(QModelIndex(),QModelIndex());
+        emit toDoDataChanged();
         //test(item,m_data);
     }
 

@@ -18,6 +18,7 @@ Module {
             Parameter { name: "message"; type: "QString" }
             Parameter { name: "m_data"; type: "QString"; isList: true }
         }
+        Signal { name: "toDoDataChanged" }
         Method {
             name: "insert"
             Parameter { name: "item"; type: "QString" }

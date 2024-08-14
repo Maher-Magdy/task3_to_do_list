@@ -25,6 +25,11 @@
                     ],
                     "name": "test",
                     "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "toDoDataChanged",
+                    "returnType": "void"
                 }
             ],
             "slots": [

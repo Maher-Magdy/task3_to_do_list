@@ -19,6 +19,7 @@ public: // QAbstractItemModel interface
     virtual QVariant data(const QModelIndex &index, int role) const;
 signals:
     void test(QString message,QList<QString> m_data);
+    void toDoDataChanged();
 public slots:
      void insert(QString item);
 public:
