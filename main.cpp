@@ -35,7 +35,13 @@ int main(int argc, char *argv[])
     engine.load(url);
 
     //main code area
-    qmlRegisterType<QAbstractListModel_Data>("_Data", 1, 0, "QAbstractListModel_Data");
+    //qmlRegisterType<QAbstractListModel_Data>("_Data", 1, 0, "QAbstractListModel_Data");
+
+    QAbstractListModel_Data _Data;
+    _Data.m_data.push_back(QString("test"));
+    _Data.m_data.push_back(QString("test"));_Data.m_data.push_back(QString("test"));_Data.m_data.push_back(QString("test"));_Data.m_data.push_back(QString("test"));
+    QQmlContext* context=engine.rootContext();
+    context->setContextProperty("_Data",&_Data);
     return app.exec();
 
 }

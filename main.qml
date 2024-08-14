@@ -2,8 +2,8 @@ import QtQuick
 import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Layouts
-import task3_to_do_list
-import ORG.Data 1.0
+//import task3_to_do_list
+//import _Data 1.0
 Window
 {
     //window properties
@@ -124,7 +124,7 @@ Window
                 anchors.leftMargin: 10
                 anchors.topMargin: 10
                 clip:true
-                model : QAbstractListModel_Data {}
+                model : _Data
                 delegate : Rectangle
                 {
                     //anchors.left:list_View_Frame.right
@@ -138,7 +138,7 @@ Window
                         Text {
                                 anchors.left:parent.right
                                 anchors.top:parent.top
-                                text: model.name
+                                text: model.display
                                 color: "white"
                                 font.pixelSize: 16
                             }
