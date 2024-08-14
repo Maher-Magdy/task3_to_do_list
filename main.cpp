@@ -39,7 +39,6 @@ int main(int argc, char *argv[])
 
     QAbstractListModel_Data _Data;
     _Data.m_data.push_back(QString("test"));
-    _Data.m_data.push_back(QString("test"));_Data.m_data.push_back(QString("test"));_Data.m_data.push_back(QString("test"));_Data.m_data.push_back(QString("test"));
     QQmlContext* context=engine.rootContext();
     context->setContextProperty("_Data",&_Data);
     return app.exec();

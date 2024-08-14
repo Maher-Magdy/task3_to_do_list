@@ -14,6 +14,7 @@ qt_add_executable(apptask3_to_do_list
 qt_add_qml_module(apptask3_to_do_list
     URI task3_to_do_list
     VERSION 1.0
+    NO_CACHEGEN
     #RESOURCE_PREFIX D:/Atomica/Repos/task3_to_do_list
     QML_FILES main.qml
     SOURCES qabstractlistmodel_data.h qabstractlistmodel_data.cpp

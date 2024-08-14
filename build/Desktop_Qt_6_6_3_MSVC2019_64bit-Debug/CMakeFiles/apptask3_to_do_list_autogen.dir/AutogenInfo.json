@@ -793,7 +793,6 @@
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
-		"D:/Atomica/Repos/task3_to_do_list/build/Desktop_Qt_6_6_3_MSVC2019_64bit-Debug/.rcc/qmlcache/apptask3_to_do_list_main_qml.cpp",
 		"D:/Atomica/Repos/task3_to_do_list/build/Desktop_Qt_6_6_3_MSVC2019_64bit-Debug/.rcc/qrc_apptask3_to_do_list_raw_qml_0.cpp",
 		"D:/Atomica/Repos/task3_to_do_list/build/Desktop_Qt_6_6_3_MSVC2019_64bit-Debug/.rcc/qrc_qmake_task3_to_do_list.cpp",
 		"D:/Atomica/Repos/task3_to_do_list/build/Desktop_Qt_6_6_3_MSVC2019_64bit-Debug/apptask3_to_do_list_qmltyperegistrations.cpp"
@@ -808,11 +807,6 @@
 	"SETTINGS_FILE" : "D:/Atomica/Repos/task3_to_do_list/build/Desktop_Qt_6_6_3_MSVC2019_64bit-Debug/CMakeFiles/apptask3_to_do_list_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[
-			"D:/Atomica/Repos/task3_to_do_list/build/Desktop_Qt_6_6_3_MSVC2019_64bit-Debug/.rcc/qmlcache/apptask3_to_do_list_qmlcache_loader.cpp",
-			"Mu",
-			null
-		],
 		[ "D:/Atomica/Repos/task3_to_do_list/main.cpp", "Mu", null ],
 		[
 			"D:/Atomica/Repos/task3_to_do_list/qabstractlistmodel_data.cpp",

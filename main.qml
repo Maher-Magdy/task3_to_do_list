@@ -140,7 +140,7 @@ Window
                                 anchors.top:parent.top
                                 text: model.display
                                 color: "white"
-                                font.pixelSize: 16
+                                font.pixelSize: 15
                             }
                         //this can be used as html
                         //text :"<font color=\"white\">"+model.name+"</font>"
