@@ -4,6 +4,7 @@ QAbstractListModel_Data::QAbstractListModel_Data(QObject *parent)
     : QAbstractListModel(parent)
 {
     // initialize our data (QList<QString>)
+
 }
 //destructor
 QAbstractListModel_Data::~QAbstractListModel_Data()
@@ -19,6 +20,7 @@ int QAbstractListModel_Data::rowCount(const QModelIndex &parent) const
 
 QVariant QAbstractListModel_Data::data(const QModelIndex &index, int role) const
 {
+
     // the index returns the requested row and column information.
     // we ignore the column and only use the row information
     int row = index.row();
@@ -40,4 +42,13 @@ QVariant QAbstractListModel_Data::data(const QModelIndex &index, int role) const
 
     // The view asked for other data, just return an empty QVariant
     return QVariant();
+}
+ void QAbstractListModel_Data::insert(QString item)
+{
+    if(item!="")
+    {
+        m_data.push_back(item);
+        test(item,m_data);
+    }
+
 }

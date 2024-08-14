@@ -23,6 +23,7 @@ Window
             id:first_row
             anchors.right:parent.right
             anchors.left:parent.left
+            anchors.top:parent.top
             anchors.margins: 20
             //this button is for adding items to to do list view
             RoundButton
@@ -38,6 +39,17 @@ Window
                 anchors.right: parent.right
                 anchors.left:parent.left
                 anchors.leftMargin: parent.width/1.35
+                onReleased: _Data.insert(textEdit.text)
+
+                Connections
+                {
+                    target: _Data
+                    onTest:
+                    {
+                        //add_Button.text=message
+                        list_Model.append({"name":textEdit.text})
+                    }
+                }
                 //anchors.left:parent.left
                 //anchors.leftMargin: parent.width/1.35
                 //anchors.rightMargin: parent.width/18
@@ -50,7 +62,6 @@ Window
             //input text
             Rectangle
             {
-
                 id : input_Text_Frame
                 objectName :"input_Text_Frame"
                 width : 80
@@ -76,6 +87,7 @@ Window
                     width: parent.width/1.2
                     height: parent.height/2
                     clip:true
+                    font.pointSize: 9
                     property string placeholderText: "Enter text here..."
                     Text
                     {
@@ -109,22 +121,21 @@ Window
             //anchors.leftMargin: parent.width/18
             //anchors.topMargin: parent.height/8
             //anchors.bottomMargin: parent.height/8
+            //for testing
+            ListModel
+            {
+                id : list_Model
+
+            }
+
             ListView
             {
-                ListModel
-                {
-                    //for testing
-                    id : list_Model
-                    ListElement{name:"test"}
-                    ListElement{name:"test"}
-                    ListElement{name:"test_______________________________________"}
-                    ListElement{name:"test"}
-                }
+                id:list_View
                 anchors.fill : parent
                 anchors.leftMargin: 10
                 anchors.topMargin: 10
-                clip:true
-                model : _Data
+                clip:true                
+                model : list_Model //_Data
                 delegate : Rectangle
                 {
                     //anchors.left:list_View_Frame.right
@@ -134,11 +145,11 @@ Window
                     CheckBox
                     {
                         id:check_Box
-
                         Text {
+                                id:delegate_text
                                 anchors.left:parent.right
                                 anchors.top:parent.top
-                                text: model.display
+                                text: model.name //model.display
                                 color: "white"
                                 font.pixelSize: 15
                             }
@@ -148,6 +159,7 @@ Window
                     }
 
                 }
+
             }
         }
     }

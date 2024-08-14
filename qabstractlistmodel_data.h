@@ -16,6 +16,10 @@ public:
 public: // QAbstractItemModel interface
     virtual int rowCount(const QModelIndex &parent) const;
     virtual QVariant data(const QModelIndex &index, int role) const;
+signals:
+    void test(QString message,QList<QString> m_data);
+public slots:
+     void insert(QString item);
 public:
     QList<QString> m_data;
 };

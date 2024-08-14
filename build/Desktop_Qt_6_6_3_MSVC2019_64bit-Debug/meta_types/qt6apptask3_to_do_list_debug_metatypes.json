@@ -5,6 +5,36 @@
                 "className": "QAbstractListModel_Data",
                 "object": true,
                 "qualifiedClassName": "QAbstractListModel_Data",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "message",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "m_data",
+                                "type": "QList<QString>"
+                            }
+                        ],
+                        "name": "test",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "item",
+                                "type": "QString"
+                            }
+                        ],
+                        "name": "insert",
+                        "returnType": "void"
+                    }
+                ],
                 "superClasses": [
                     {
                         "access": "public",
