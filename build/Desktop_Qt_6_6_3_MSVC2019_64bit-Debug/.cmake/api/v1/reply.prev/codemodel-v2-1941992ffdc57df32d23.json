@@ -1,0 +1,169 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-6beef93a9c27e2404ffc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "task3_to_do_list",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-e9b9c1f2de5c9762c12c.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-31e285097427d3bf5918.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-41eccfa5beefda56bcbd.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-96d6f20a3eab838b1a65.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apptask3_to_do_list::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apptask3_to_do_list-Debug-b052f6e9b67226bf77cb.json",
+					"name" : "apptask3_to_do_list",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apptask3_to_do_list_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apptask3_to_do_list_autogen-Debug-6b229685e197d90bbb78.json",
+					"name" : "apptask3_to_do_list_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apptask3_to_do_list_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apptask3_to_do_list_autogen_timestamp_deps-Debug-82464d2f427e52c3251e.json",
+					"name" : "apptask3_to_do_list_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apptask3_to_do_list_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apptask3_to_do_list_qmlimportscan-Debug-b9557fc74f97817491b6.json",
+					"name" : "apptask3_to_do_list_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apptask3_to_do_list_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apptask3_to_do_list_qmllint-Debug-7c1f4fd241fd639c1af1.json",
+					"name" : "apptask3_to_do_list_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apptask3_to_do_list_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apptask3_to_do_list_qmllint_json-Debug-1e82f1b4caa797d303fb.json",
+					"name" : "apptask3_to_do_list_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apptask3_to_do_list_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apptask3_to_do_list_qmllint_module-Debug-8baa4218084bf45230d2.json",
+					"name" : "apptask3_to_do_list_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apptask3_to_do_list_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apptask3_to_do_list_qmltyperegistration-Debug-80cda9ae8076c809c404.json",
+					"name" : "apptask3_to_do_list_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apptask3_to_do_list_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apptask3_to_do_list_tooling-Debug-65f10d6dc6ae70c7f5e2.json",
+					"name" : "apptask3_to_do_list_tooling",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Atomica/Repos/task3_to_do_list/build/Desktop_Qt_6_6_3_MSVC2019_64bit-Debug",
+		"source" : "D:/Atomica/Repos/task3_to_do_list"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

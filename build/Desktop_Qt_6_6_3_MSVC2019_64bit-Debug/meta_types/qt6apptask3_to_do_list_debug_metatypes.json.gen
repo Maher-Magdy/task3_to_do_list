@@ -1,0 +1,19 @@
+[
+    {
+        "classes": [
+            {
+                "className": "QAbstractListModel_Data",
+                "object": true,
+                "qualifiedClassName": "QAbstractListModel_Data",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "qabstractlistmodel_data.h",
+        "outputRevision": 68
+    }
+]

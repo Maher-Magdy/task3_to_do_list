@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/task3_to_do_list/">
+    <file alias="main.qml">D:/Atomica/Repos/task3_to_do_list/main.qml</file>
+  </qresource>
+</RCC>
+

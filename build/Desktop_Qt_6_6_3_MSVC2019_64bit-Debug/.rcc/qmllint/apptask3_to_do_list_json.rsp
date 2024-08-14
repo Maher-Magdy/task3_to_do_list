@@ -1,0 +1,12 @@
+--bare
+-I
+D:/Atomica/Repos/task3_to_do_list/build/Desktop_Qt_6_6_3_MSVC2019_64bit-Debug
+-I
+D:/Programs/Qt/6.6.3/msvc2019_64/./qml
+--resource
+D:/Atomica/Repos/task3_to_do_list/build/Desktop_Qt_6_6_3_MSVC2019_64bit-Debug/.rcc/qmake_task3_to_do_list.qrc
+--resource
+D:/Atomica/Repos/task3_to_do_list/build/Desktop_Qt_6_6_3_MSVC2019_64bit-Debug/.rcc/apptask3_to_do_list_raw_qml_0.qrc
+D:/Atomica/Repos/task3_to_do_list/main.qml
+--json
+D:/Atomica/Repos/task3_to_do_list/build/Desktop_Qt_6_6_3_MSVC2019_64bit-Debug/apptask3_to_do_list_qmllint.json
