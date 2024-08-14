@@ -35,13 +35,14 @@ int main(int argc, char *argv[])
 
 
     //main code area
+    qmlRegisterType<QAbstractListModel_Data>("task3_to_do_list", 1, 0, "ToDoData");
 
 
-    QAbstractListModel_Data _Data;
-    qmlRegisterType<QAbstractListModel_Data>("task3_to_do_list", 1, 0, "To_Data");
-    _Data.m_data.push_back(QString("test"));
-    QQmlContext* context=engine.rootContext();
-    context->setContextProperty("_Data",&_Data);
+    //QAbstractListModel_Data _Data;
+    //_Data.m_data.push_back(QString("test"));
+    //QQmlContext* context=engine.rootContext();
+    //context->setContextProperty("_Data",&_Data);
+    //loading qml
     engine.load(url);
     return app.exec();
 

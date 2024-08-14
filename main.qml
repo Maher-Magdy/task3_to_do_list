@@ -13,6 +13,7 @@ Window
     height: 600
     visible: true
     color : "#444060"
+
     title: qsTr("To Do List")
 
     ColumnLayout
@@ -41,8 +42,8 @@ Window
                 anchors.right: parent.right
                 anchors.left:parent.left
                 anchors.leftMargin: parent.width/1.35
-                onReleased: _Data.insert(textEdit.text)
-
+                //onReleased: _Data.insert(textEdit.text)
+                /*
                 Connections
                 {
                     target: _Data
@@ -52,6 +53,7 @@ Window
                         list_Model.append({"name":textEdit.text})
                     }
                 }
+                */
                 //anchors.left:parent.left
                 //anchors.leftMargin: parent.width/1.35
                 //anchors.rightMargin: parent.width/18
@@ -127,7 +129,7 @@ Window
             ListModel
             {
                 id : list_Model
-
+                ListElement{display:"test"}
             }
 
             ListView
@@ -137,7 +139,7 @@ Window
                 anchors.leftMargin: 10
                 anchors.topMargin: 10
                 clip:true                
-                model : list_Model //_Data
+                model : ToDoData {} //list_Model //_Data
                 delegate : Rectangle
                 {
                     //anchors.left:list_View_Frame.right
@@ -165,15 +167,16 @@ Window
                             }
                             }
                         }
-                        Text {
+                        Text
+                        {
                                 id:delegate_text
                                 anchors.left:parent.right
                                 anchors.top:parent.top
-                                text: model.name //model.display
+                                text: model.display //model.name
                                 color: "white"
                                 font.pixelSize: 15
 
-                            }
+                        }
                         //this can be used as html
                         //text :"<font color=\"white\">"+model.name+"</font>"
 

@@ -4,6 +4,7 @@ QAbstractListModel_Data::QAbstractListModel_Data(QObject *parent)
     : QAbstractListModel(parent)
 {
     // initialize our data (QList<QString>)
+    m_data.push_back("test");
 
 }
 //destructor
@@ -47,8 +48,8 @@ QVariant QAbstractListModel_Data::data(const QModelIndex &index, int role) const
 {
     if(item!="")
     {
-        m_data.push_back(item);
-        test(item,m_data);
+        //m_data.push_back(item);
+        //test(item,m_data);
     }
 
 }
