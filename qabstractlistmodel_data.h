@@ -9,6 +9,7 @@
 class QAbstractListModel_Data : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
 public:
     explicit QAbstractListModel_Data(QObject *parent = 0);
     ~QAbstractListModel_Data();

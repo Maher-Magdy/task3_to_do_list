@@ -1,6 +1,12 @@
 {
     "classes": [
         {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                }
+            ],
             "className": "QAbstractListModel_Data",
             "object": true,
             "qualifiedClassName": "QAbstractListModel_Data",

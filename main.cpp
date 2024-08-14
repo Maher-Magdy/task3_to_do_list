@@ -32,15 +32,17 @@ int main(int argc, char *argv[])
             },
             Qt::QueuedConnection
             );
-    engine.load(url);
+
 
     //main code area
-    //qmlRegisterType<QAbstractListModel_Data>("_Data", 1, 0, "QAbstractListModel_Data");
+
 
     QAbstractListModel_Data _Data;
+    qmlRegisterType<QAbstractListModel_Data>("task3_to_do_list", 1, 0, "To_Data");
     _Data.m_data.push_back(QString("test"));
     QQmlContext* context=engine.rootContext();
     context->setContextProperty("_Data",&_Data);
+    engine.load(url);
     return app.exec();
 
 }

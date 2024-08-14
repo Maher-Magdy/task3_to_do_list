@@ -2,8 +2,9 @@ import QtQuick
 import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Layouts
-//import task3_to_do_list
-//import _Data 1.0
+import task3_to_do_list
+//import QAbstractListModel_Data
+
 Window
 {
     //window properties
@@ -13,6 +14,7 @@ Window
     visible: true
     color : "#444060"
     title: qsTr("To Do List")
+
     ColumnLayout
     {
         id:first_Column
@@ -145,6 +147,24 @@ Window
                     CheckBox
                     {
                         id:check_Box
+                        MouseArea
+                        {
+                            anchors.fill: parent
+                            //visible: false
+                            acceptedButtons: Qt.LeftButton
+                            onClicked:
+                            {
+                            if (mouse.button === Qt.LeftButton & check_Box.checkState===Qt.Unchecked)
+                            {
+                                //add_Button.text="test"
+                                check_Box.checked=true
+                            }
+                            else if(mouse.button === Qt.LeftButton &check_Box.checkState===Qt.Checked )
+                            {
+                                check_Box.checked=false
+                            }
+                            }
+                        }
                         Text {
                                 id:delegate_text
                                 anchors.left:parent.right
@@ -152,6 +172,7 @@ Window
                                 text: model.name //model.display
                                 color: "white"
                                 font.pixelSize: 15
+
                             }
                         //this can be used as html
                         //text :"<font color=\"white\">"+model.name+"</font>"
