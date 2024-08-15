@@ -18,6 +18,10 @@ Module {
             Parameter { name: "item"; type: "QString" }
         }
         Method {
+            name: "toggleChecked"
+            Parameter { name: "row"; type: "int" }
+        }
+        Method {
             name: "remove"
             Parameter { name: "row"; type: "int" }
         }

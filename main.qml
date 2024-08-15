@@ -60,18 +60,11 @@ Rectangle
                 onClicked:
                 {
                     //print(mydata.m_data);
-                    //emit signal to c++
-
                     //insert the text into QVector data
-                    //mydata.insert(textEdit.text);
-                    //
-
-
+                    mydata.insert(textEdit.text);
                     //erase text
                     textEdit.text=""
-
                 }
-
             }
 
             //input text
@@ -186,23 +179,17 @@ Rectangle
                         {
                             anchors.fill: parent
                             //visible: false
-                            acceptedButtons: Qt.LeftButton
+                            acceptedButtons: Qt.LeftButton | Qt.RightButton
                             onClicked:
                             {
-                                //if (mouse.button === Qt.LeftButton & check_Box.checkState===Qt.Unchecked)
-                                //{
-                                    //add_Button.text="test"
-                                //check_Box.checked=true
-                                //if(check_Box.checked===true)
-                                //{
-                                //    list_View.clicked_Index=index;
-                                //}
-                                mydata.remove(model.index);
-                                //}
-                                //else if(mouse.button === Qt.LeftButton &check_Box.checkState===Qt.Checked )
-                                //{
-                                //    check_Box.checked=false
-                                //}
+                                if (mouse.button === Qt.LeftButton)
+                                {
+                                    mydata.toggleChecked(model.index);
+                                }
+                                else if(mouse.button === Qt.RightButton &check_Box.checkState===Qt.Checked)
+                                {
+                                    mydata.remove(model.index);
+                                }
                             }
                         }
 

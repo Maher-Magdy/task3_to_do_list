@@ -5,17 +5,20 @@
 QAbstractListModel_Data::QAbstractListModel_Data(QObject *parent)
     : QAbstractListModel(parent)
 {
+
     // initialize our data (QList<QString>)
     //mHold=new QAbstractListModel_Data;
     //m_data<<QVectorData("",true);
     //m_data.push_back("test");m_data.push_back("test");m_data.push_back("test");
+    //for testing
+    /*
     QVectorData test0("test0",false);
     QVectorData test1("test1",0);
     QVectorData test2("test2",false);
     m_data.push_back(test0);
     m_data.push_back(test1);
     m_data.push_back(test2);
-
+    */
 }
 //destructor
 QAbstractListModel_Data::~QAbstractListModel_Data()
@@ -71,6 +74,28 @@ QHash<int, QByteArray> QAbstractListModel_Data::roleNames() const
 
 
 
+void QAbstractListModel_Data::toggleChecked(int row)
+{
+    //check boundaries
+    if (row < 0 || row >= m_data.count())
+        return;
+
+
+    beginResetModel();
+    //beginRemoveRows(QModelIndex(), row, row);
+    //store a copy at the end of the vector
+    //QVectorData itemCopy=m_data[row];
+    m_data[row].IsChecked=!m_data[row].IsChecked;
+    //itemCopy.IsChecked=true;
+    //m_data.push_back(itemCopy);
+    //remove the vector
+    //m_data.removeAt(row);
+    //endRemoveRows();
+    endResetModel();
+}
+
+
+
 void QAbstractListModel_Data::remove(int row)
 {
     //check boundaries
@@ -81,14 +106,16 @@ void QAbstractListModel_Data::remove(int row)
     beginResetModel();
     //beginRemoveRows(QModelIndex(), row, row);
     //store a copy at the end of the vector
-    QVectorData itemCopy=m_data[row];
-    itemCopy.IsChecked=true;
-    m_data.push_back(itemCopy);
+    //QVectorData itemCopy=m_data[row];
+    //m_data[row].IsChecked=!m_data[row].IsChecked;
+    //itemCopy.IsChecked=true;
+    //m_data.push_back(itemCopy);
     //remove the vector
     m_data.removeAt(row);
     //endRemoveRows();
     endResetModel();
 }
+
 
 void QAbstractListModel_Data::insert(QString item)
 {
@@ -99,6 +126,27 @@ void QAbstractListModel_Data::insert(QString item)
 
 }
 /*
+ *
+ * void QAbstractListModel_Data::markUnchecked(int row)
+{
+    //check boundaries
+    if (row < 0 || row >= m_data.count())
+        return;
+
+
+    beginResetModel();
+    //beginRemoveRows(QModelIndex(), row, row);
+    //store a copy at the end of the vector
+    //QVectorData itemCopy=m_data[row];
+    m_data[row].IsChecked=false;
+    //itemCopy.IsChecked=true;
+    //m_data.push_back(itemCopy);
+    //remove the vector
+    //m_data.removeAt(row);
+    //endRemoveRows();
+    endResetModel();
+}
+
 
    void QAbstractListModel_Data::insert(QString item)
 {

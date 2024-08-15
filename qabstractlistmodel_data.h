@@ -41,7 +41,9 @@ signals:
     //void toDoDataChanged();
 public slots:
     void insert(QString item);
+    void toggleChecked(int row);
     void remove(int row);
+    //void markUnchecked(int row);
 public:
     QList<QVectorData> m_data;
 };

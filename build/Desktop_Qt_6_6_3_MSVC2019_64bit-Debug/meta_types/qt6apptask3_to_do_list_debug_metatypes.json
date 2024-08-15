@@ -31,6 +31,17 @@
                                 "type": "int"
                             }
                         ],
+                        "name": "toggleChecked",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "row",
+                                "type": "int"
+                            }
+                        ],
                         "name": "remove",
                         "returnType": "void"
                     }
