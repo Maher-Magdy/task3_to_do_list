@@ -9,8 +9,8 @@
 #include <QObject>
 #include <QtGui>
 #include <QtQml>
-
 #include "QAbstractListModel_Data.h"
+
 int main(int argc, char *argv[])
 {
     //command line

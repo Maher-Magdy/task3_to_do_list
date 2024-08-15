@@ -6,7 +6,8 @@ QAbstractListModel_Data::QAbstractListModel_Data(QObject *parent)
     : QAbstractListModel(parent)
 {
     // initialize our data (QList<QString>)
-    //m_data.push_back("test");m_data.push_back("test");m_data.push_back("test");
+    //mHold=new QAbstractListModel_Data;
+    m_data.push_back("test");m_data.push_back("test");m_data.push_back("test");
 
 }
 //destructor
@@ -51,8 +52,10 @@ QVariant QAbstractListModel_Data::data(const QModelIndex &index, int role) const
     if(item!="")
     {
         m_data.push_back(item);
-        //emit dataChanged(QModelIndex(),QModelIndex());
         emit toDoDataChanged();
+        //emit dataChanged(QModelIndex(),QModelIndex());
+        //QModelIndex myindex = createIndex(0,0);
+        //emit dataChanged(myindex,myindex,{0});
         //test(item,m_data);
     }
 

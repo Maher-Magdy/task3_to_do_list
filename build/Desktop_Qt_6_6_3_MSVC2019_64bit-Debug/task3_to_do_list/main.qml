@@ -18,8 +18,6 @@ Window
     {
         list_View.model=test ;
         list_View.model=mydata;
-
-
     }
 Rectangle
 {
@@ -170,6 +168,7 @@ Rectangle
                 anchors.topMargin: 10
                 clip:true
 
+
                 //new property
                 property int clicked_Index: -1
                 //the dumbest solution possible
@@ -185,6 +184,7 @@ Rectangle
                         update_Function();
                         //add_Button.text=add_Button.text;
                     }
+
 
 
                 }
@@ -210,6 +210,7 @@ Rectangle
                                 //print(list_View.count-1)
                                 //call update js function to refresh listView
                                 update_Function();
+                                //mark the last element as checked
                             }
                         }
                         /*

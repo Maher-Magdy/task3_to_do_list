@@ -14,9 +14,10 @@ public:
     explicit QAbstractListModel_Data(QObject *parent = 0);
     ~QAbstractListModel_Data();
 
-public: // QAbstractItemModel interface
+    //Q_PROPERTY(QAbstractListModel_Data* hold MEMBER mHold CONSTANT ) ;
     virtual int rowCount(const QModelIndex &parent) const;
     virtual QVariant data(const QModelIndex &index, int role) const;
+
 signals:
     void test(QString message,QList<QString> m_data);
     void toDoDataChanged();

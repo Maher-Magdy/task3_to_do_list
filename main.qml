@@ -18,8 +18,6 @@ Window
     {
         list_View.model=test ;
         list_View.model=mydata;
-
-
     }
 Rectangle
 {
@@ -186,6 +184,7 @@ Rectangle
                         update_Function();
                         //add_Button.text=add_Button.text;
                     }
+
 
 
                 }
