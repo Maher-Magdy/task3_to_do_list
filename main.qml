@@ -62,7 +62,7 @@ Rectangle
                     //print(mydata.m_data);
                     //insert the text into QVector data
                     if(textEdit.text!="")
-                    mydata.insert(textEdit.text);
+                    {mydata.insert(textEdit.text);}
                     //erase text
                     textEdit.text=""
                 }

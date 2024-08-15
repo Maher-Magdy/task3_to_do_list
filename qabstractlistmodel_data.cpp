@@ -6,31 +6,34 @@ QAbstractListModel_Data::QAbstractListModel_Data(QObject *parent)
     : QAbstractListModel(parent)
 {
 
-/*
+
     //read from file at startup
-    QFile file("../../saved to do list.txt");
-    //qDebug()<<false;
-    file.open(QIODevice::ReadOnly);
+    //first check in two locations for the saved to do list . txt file
+    //it could be next to source code or next to .exe
+    QFile file("saved to do list.txt");
+    bool file_found=file.open(QIODevice::ReadOnly);
+    if(!file_found)
+    {
+        file.setFileName("../../saved to do list.txt");
+        file.open(QIODevice::ReadOnly);
+    }
+    //now load data from file
     QTextStream stream(&file);
     while ( !stream.atEnd() )
     {
         QString data;
-        stream >> data;
+        QString checked;
+        //read lines alternatively where the first line is an item and the second is its checked state
+        data= stream.readLine();;
+        checked= stream.readLine();;
         // append d to some list;
-        QVectorData Qdata(data,false);
+        QVectorData Qdata(data,checked.toInt());
         m_data.push_back(Qdata);
     }
-*/
-    /*
-    const QString qString = "Hello, World!";
-    const QString qPath("test.txt");
-    QFile qFile(qPath);
-    if (qFile.open(QIODevice::WriteOnly))
-    {
-        QTextStream out(&qFile); out << qString;
-        qFile.close();
-    }
-    */
+
+
+
+
 
 
     // initialize our data (QList<QString>)
@@ -49,7 +52,21 @@ QAbstractListModel_Data::QAbstractListModel_Data(QObject *parent)
 }
 //destructor
 QAbstractListModel_Data::~QAbstractListModel_Data()
-{
+{    
+    //write all items to the file at destructor
+    const QString qPath("saved to do list.txt");
+    QFile file(qPath);
+    if (file.open(QIODevice::WriteOnly))
+    {
+        QTextStream out(&file);
+        for(int i=0;i<m_data.size();i++)
+        {
+            out <<m_data[i].Name<<"\n"<<m_data[i].IsChecked;
+            if(i!=m_data.count()-1)
+            {out<<"\n";}
+        }
+        file.close();
+    }
 }
 
 int QAbstractListModel_Data::rowCount(const QModelIndex &parent) const
