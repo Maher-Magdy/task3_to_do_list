@@ -23,6 +23,7 @@ D:/Atomica/Repos/task3_to_do_list/qabstractlistmodel_data.h
  mdp:D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QSizeF
  mdp:D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QString
  mdp:D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QStringList
+ mdp:D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QTimer
  mdp:D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QUrl
  mdp:D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QVariant
  mdp:D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QtCore

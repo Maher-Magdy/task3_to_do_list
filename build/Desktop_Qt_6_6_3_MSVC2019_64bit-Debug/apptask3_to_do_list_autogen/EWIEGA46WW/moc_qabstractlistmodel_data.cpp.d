@@ -18,6 +18,7 @@ D:/Atomica/Repos/task3_to_do_list/build/Desktop_Qt_6_6_3_MSVC2019_64bit-Debug/ap
   D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QSizeF \
   D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QString \
   D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QStringList \
+  D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QTimer \
   D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QUrl \
   D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QVariant \
   D:/Programs/Qt/6.6.3/msvc2019_64/include/QtCore/QtCore \

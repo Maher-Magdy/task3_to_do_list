@@ -11,28 +11,6 @@
                 "className": "QAbstractListModel_Data",
                 "object": true,
                 "qualifiedClassName": "QAbstractListModel_Data",
-                "signals": [
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "message",
-                                "type": "QString"
-                            },
-                            {
-                                "name": "m_data",
-                                "type": "QList<QString>"
-                            }
-                        ],
-                        "name": "test",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "name": "toDoDataChanged",
-                        "returnType": "void"
-                    }
-                ],
                 "slots": [
                     {
                         "access": "public",
@@ -49,7 +27,7 @@
                         "access": "public",
                         "arguments": [
                             {
-                                "name": "item_index",
+                                "name": "row",
                                 "type": "int"
                             }
                         ],

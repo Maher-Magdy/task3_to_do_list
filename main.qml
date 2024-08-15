@@ -62,7 +62,8 @@ Rectangle
                     //print(mydata.m_data);
                     //emit signal to c++
 
-                    mydata.insert(textEdit.text);
+                    //insert the text into QVector data
+                    //mydata.insert(textEdit.text);
                     //
 
 
@@ -70,23 +71,6 @@ Rectangle
                     textEdit.text=""
 
                 }
-                /*
-                Connections
-                {
-                    target: _Data
-                    onTest:
-                    {
-                        //add_Button.text=message
-                        list_Model.append({"name":textEdit.text})
-                    }
-                }
-                */
-                //anchors.left:parent.left
-                //anchors.leftMargin: parent.width/1.35
-                //anchors.rightMargin: parent.width/18
-                //anchors.topMargin: parent.height/60
-                //when button is pressed delete everything then update on release
-                //onPressed: update_Elements()
 
             }
 
@@ -101,13 +85,9 @@ Rectangle
                 border.color : "white"
                 color : program_Window.color
                 border.width : 2
-                //anchors.top: parent.top
                 anchors.right: add_Button.left
                 anchors.rightMargin: 20
                 anchors.left: parent.left
-                //anchors.rightMargin: parent.width/18
-                //anchors.leftMargin: parent.width/18
-                //anchors.topMargin: parent.height/60
                 clip:true
                 TextEdit
                 {
@@ -149,34 +129,22 @@ Rectangle
             anchors.left: parent.left
             anchors.bottom: parent.bottom
             anchors.margins:20
-            //anchors.rightMargin: parent.width/18
-            //anchors.leftMargin: parent.width/18
-            //anchors.topMargin: parent.height/8
-            //anchors.bottomMargin: parent.height/8
-            //for testing
-            ListModel
-            {
-                id : list_Model
-                ListElement{display:"test"}
-            }
 
             ListView
             {
+                //new property
+                //property int clicked_Index: -1
+                //the dumbest solution possible
+                //ToDoData {id:test}
                 id:list_View
                 anchors.fill : parent
                 anchors.leftMargin: 10
                 anchors.topMargin: 10
-                clip:true
-
-
-                //new property
-                property int clicked_Index: -1
-                //the dumbest solution possible
-                ToDoData {id:test}
+                clip:true                
                 model : ToDoData //list_Model
                 {
-
                     id : mydata
+                    /*
                     onToDoDataChanged:
                     {
                         //print("xx");
@@ -184,9 +152,7 @@ Rectangle
                         update_Function();
                         //add_Button.text=add_Button.text;
                     }
-
-
-
+                    */
                 }
                 delegate : Rectangle
                 {
@@ -197,7 +163,8 @@ Rectangle
                     CheckBox
                     {
                         id:check_Box
-
+                        checked:model.ischecked
+                        /*
                         onClicked:
                         if (check_Box.checkState===Qt.Checked)
                         {
@@ -213,7 +180,8 @@ Rectangle
                                 //mark the last element as checked
                             }
                         }
-                        /*
+                        */
+
                         MouseArea
                         {
                             anchors.fill: parent
@@ -221,42 +189,37 @@ Rectangle
                             acceptedButtons: Qt.LeftButton
                             onClicked:
                             {
-                            if (mouse.button === Qt.LeftButton & check_Box.checkState===Qt.Unchecked)
-                            {
-                                //add_Button.text="test"
-                                check_Box.checked=true
-
+                                //if (mouse.button === Qt.LeftButton & check_Box.checkState===Qt.Unchecked)
+                                //{
+                                    //add_Button.text="test"
+                                //check_Box.checked=true
+                                //if(check_Box.checked===true)
+                                //{
+                                //    list_View.clicked_Index=index;
+                                //}
+                                mydata.remove(model.index);
+                                //}
+                                //else if(mouse.button === Qt.LeftButton &check_Box.checkState===Qt.Checked )
+                                //{
+                                //    check_Box.checked=false
+                                //}
                             }
-                            else if(mouse.button === Qt.LeftButton &check_Box.checkState===Qt.Checked )
-                            {
-                                check_Box.checked=false
-                            }
-
-                            }
-
                         }
-                        */
+
                         Text
                         {
                                 id:delegate_text
                                 anchors.left:parent.right
                                 anchors.top:parent.top
-                                text: model.display //model.name
-                                color: "white"
+                                text: model.name //model.name
+                                color: check_Box.checked ?"#888888":"#ffffff"  //"white"
                                 //color:(index===list_View.clicked_Index)?"#555555":"#ffffff"
                                 font.pixelSize: 15
-
-                        }
-                        //this can be used as html
-                        //text :"<font color=\"white\">"+model.name+"</font>"
-
+                        }                        
                     }
-
                 }
-
             }
         }
     }
-
 }
 }

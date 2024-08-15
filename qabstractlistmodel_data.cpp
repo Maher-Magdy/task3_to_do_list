@@ -7,7 +7,14 @@ QAbstractListModel_Data::QAbstractListModel_Data(QObject *parent)
 {
     // initialize our data (QList<QString>)
     //mHold=new QAbstractListModel_Data;
-    m_data.push_back("test");m_data.push_back("test");m_data.push_back("test");
+    //m_data<<QVectorData("",true);
+    //m_data.push_back("test");m_data.push_back("test");m_data.push_back("test");
+    QVectorData test0("test0",false);
+    QVectorData test1("test1",0);
+    QVectorData test2("test2",false);
+    m_data.push_back(test0);
+    m_data.push_back(test1);
+    m_data.push_back(test2);
 
 }
 //destructor
@@ -37,21 +44,68 @@ QVariant QAbstractListModel_Data::data(const QModelIndex &index, int role) const
     // A model can return data for different roles.
     // The default role is the display role.
     // it can be accesses in QML with "model.display"
-    switch(role) {
-    case Qt::DisplayRole:
-        // Return the color name for the particular row
-        // Qt automatically converts it to the QVariant type
-        return m_data.value(row);
+    const QVectorData &data = m_data.at(index.row());
+    if ( role == NameRole ){
+        return data.Name;
     }
+    else if ( role == IsCheckedRole )
+        return data.IsChecked;
 
-    // The view asked for other data, just return an empty QVariant
-    return QVariant();
+    else
+        // The view asked for other data, just return an empty QVariant
+        return QVariant();
+
 }
+
+QHash<int, QByteArray> QAbstractListModel_Data::roleNames() const
+{
+    static QHash<int, QByteArray> mapping {
+        {NameRole, "name"},
+        {IsCheckedRole, "ischecked"},
+
+    };
+    return mapping;
+}
+
+
+
+
+
+void QAbstractListModel_Data::remove(int row)
+{
+    //check boundaries
+    if (row < 0 || row >= m_data.count())
+        return;
+
+
+    beginResetModel();
+    //beginRemoveRows(QModelIndex(), row, row);
+    //store a copy at the end of the vector
+    QVectorData itemCopy=m_data[row];
+    itemCopy.IsChecked=true;
+    m_data.push_back(itemCopy);
+    //remove the vector
+    m_data.removeAt(row);
+    //endRemoveRows();
+    endResetModel();
+}
+
+void QAbstractListModel_Data::insert(QString item)
+{
+    beginResetModel();
+    QVectorData newitem(item,false);
+    m_data.push_back(newitem);
+    endResetModel();
+
+}
+/*
+
    void QAbstractListModel_Data::insert(QString item)
 {
     if(item!="")
     {
-        m_data.push_back(item);
+        QVector myitem(item,true);
+        m_data.push_back(myitem);
         emit toDoDataChanged();
         //emit dataChanged(QModelIndex(),QModelIndex());
         //QModelIndex myindex = createIndex(0,0);
@@ -61,6 +115,7 @@ QVariant QAbstractListModel_Data::data(const QModelIndex &index, int role) const
 
 
 }
+
 void QAbstractListModel_Data::remove(int item_index)
 {
     //make sure index is not out of range
@@ -76,5 +131,5 @@ void QAbstractListModel_Data::remove(int item_index)
     }
 
 
-
 }
+*/
