@@ -1,4 +1,0 @@
-module task3_to_do_list
-typeinfo apptask3_to_do_list.qmltypes
-prefer :/task3_to_do_list/
-
