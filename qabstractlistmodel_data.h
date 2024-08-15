@@ -6,7 +6,12 @@
 #include <QtQml>
 #include <QByteArray>
 #include <QTimer>
+#include <QDebug>
 #include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <QFile>
+#include <QTextStream>
 
 struct QVectorData {
     QVectorData() {}

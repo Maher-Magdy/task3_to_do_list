@@ -6,6 +6,33 @@ QAbstractListModel_Data::QAbstractListModel_Data(QObject *parent)
     : QAbstractListModel(parent)
 {
 
+/*
+    //read from file at startup
+    QFile file("../../saved to do list.txt");
+    //qDebug()<<false;
+    file.open(QIODevice::ReadOnly);
+    QTextStream stream(&file);
+    while ( !stream.atEnd() )
+    {
+        QString data;
+        stream >> data;
+        // append d to some list;
+        QVectorData Qdata(data,false);
+        m_data.push_back(Qdata);
+    }
+*/
+    /*
+    const QString qString = "Hello, World!";
+    const QString qPath("test.txt");
+    QFile qFile(qPath);
+    if (qFile.open(QIODevice::WriteOnly))
+    {
+        QTextStream out(&qFile); out << qString;
+        qFile.close();
+    }
+    */
+
+
     // initialize our data (QList<QString>)
     //mHold=new QAbstractListModel_Data;
     //m_data<<QVectorData("",true);
@@ -15,7 +42,7 @@ QAbstractListModel_Data::QAbstractListModel_Data(QObject *parent)
     QVectorData test0("test0",false);
     QVectorData test1("test1",0);
     QVectorData test2("test2",false);
-    m_data.push_back(test0);
+
     m_data.push_back(test1);
     m_data.push_back(test2);
     */
