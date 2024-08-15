@@ -56,4 +56,22 @@ QVariant QAbstractListModel_Data::data(const QModelIndex &index, int role) const
         //test(item,m_data);
     }
 
+
+}
+void QAbstractListModel_Data::remove(int item_index)
+{
+    //make sure index is not out of range
+    if(item_index<m_data.size())
+    {
+        //save a copy from the data in a string
+        QString saved_copy=m_data[item_index];
+        //remove the item from the data vector/list
+        m_data.remove(item_index);
+        //push the completed item to the end of the stack
+        m_data.push_back(saved_copy);
+
+    }
+
+
+
 }

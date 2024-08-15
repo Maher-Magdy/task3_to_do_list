@@ -23,5 +23,9 @@ Module {
             name: "insert"
             Parameter { name: "item"; type: "QString" }
         }
+        Method {
+            name: "remove"
+            Parameter { name: "item_index"; type: "int" }
+        }
     }
 }

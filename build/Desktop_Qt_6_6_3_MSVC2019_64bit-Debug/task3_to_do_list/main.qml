@@ -3,7 +3,7 @@ import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Layouts
 import QAbstractListModel_Data 1.0
-//import QAbstractListModel_Data
+//import task3_to_do_list
 
 Window
 {
@@ -13,8 +13,14 @@ Window
     height: 600
     visible: true
     color : "#333035"
-
     title: qsTr("To Do List")
+    function update_Function()
+    {
+        list_View.model=test ;
+        list_View.model=mydata;
+
+
+    }
 Rectangle
 {
     id:gradient_Rectangle
@@ -163,6 +169,9 @@ Rectangle
                 anchors.leftMargin: 10
                 anchors.topMargin: 10
                 clip:true
+
+                //new property
+                property int clicked_Index: -1
                 //the dumbest solution possible
                 ToDoData {id:test}
                 model : ToDoData //list_Model
@@ -173,8 +182,7 @@ Rectangle
                     {
                         //print("xx");
                         //print(mydata.m_data);
-                        list_View.model=test ;
-                        list_View.model=mydata;
+                        update_Function();
                         //add_Button.text=add_Button.text;
                     }
 
@@ -189,6 +197,22 @@ Rectangle
                     CheckBox
                     {
                         id:check_Box
+
+                        onClicked:
+                        if (check_Box.checkState===Qt.Checked)
+                        {
+                            //add_Button.text="test"
+                            //check_Box.checked=true
+                            {
+                                //call remove function to delete from qvector
+                                mydata.remove(index);
+                                //list_View.clicked_Index=index;
+                                //print(list_View.count-1)
+                                //call update js function to refresh listView
+                                update_Function();
+                            }
+                        }
+                        /*
                         MouseArea
                         {
                             anchors.fill: parent
@@ -200,13 +224,17 @@ Rectangle
                             {
                                 //add_Button.text="test"
                                 check_Box.checked=true
+
                             }
                             else if(mouse.button === Qt.LeftButton &check_Box.checkState===Qt.Checked )
                             {
                                 check_Box.checked=false
                             }
+
                             }
+
                         }
+                        */
                         Text
                         {
                                 id:delegate_text
@@ -214,6 +242,7 @@ Rectangle
                                 anchors.top:parent.top
                                 text: model.display //model.name
                                 color: "white"
+                                //color:(index===list_View.clicked_Index)?"#555555":"#ffffff"
                                 font.pixelSize: 15
 
                         }

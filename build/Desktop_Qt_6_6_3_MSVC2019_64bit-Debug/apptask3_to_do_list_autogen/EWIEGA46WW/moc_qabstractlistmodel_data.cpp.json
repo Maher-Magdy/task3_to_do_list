@@ -43,6 +43,17 @@
                     ],
                     "name": "insert",
                     "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "item_index",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "remove",
+                    "returnType": "void"
                 }
             ],
             "superClasses": [

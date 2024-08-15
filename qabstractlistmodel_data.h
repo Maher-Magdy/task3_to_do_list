@@ -21,7 +21,8 @@ signals:
     void test(QString message,QList<QString> m_data);
     void toDoDataChanged();
 public slots:
-     void insert(QString item);
+    void insert(QString item);
+    void remove(int item_index);
 public:
     QList<QString> m_data;
 };
