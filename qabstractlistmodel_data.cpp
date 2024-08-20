@@ -20,7 +20,7 @@ QAbstractListModel_Data::QAbstractListModel_Data(QObject *parent)
     {
         QString data;
         QString checked;
-        //read lines alternatively where the first line is an item and the second is its checked state
+        // read lines alternatively where the first line is an item and the second is its checked state
         data= stream.readLine();;
         checked= stream.readLine();;
         // append d to some list;
