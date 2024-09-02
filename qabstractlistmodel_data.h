@@ -37,7 +37,7 @@ public:
     ~QAbstractListModel_Data();
     virtual int rowCount(const QModelIndex &parent) const;
     virtual QVariant data(const QModelIndex &index, int role) const;
-    QHash<int, QByteArray> roleNames() const override;  
+    QHash<int, QByteArray> roleNames() const override;
 public slots:
     void insert(QString item);
     void toggleChecked(int row);

@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     //engine
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/task3_to_do_list/main.qml"));
-    engine.addImportPath("D:/Atomica/Repos/task3_to_do_list");
+    //engine.addImportPath("D:/Atomica/Repos/task3_to_do_list");
     //unknown code
     QObject::connect
         (

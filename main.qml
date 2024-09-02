@@ -5,6 +5,7 @@ import QtQuick.Layouts
 import QAbstractListModel_Data 1.0
 Window
 {
+
     //window properties
     id: program_Window
     width: 400
@@ -28,6 +29,8 @@ Rectangle
                     GradientStop { position: 0.33; color: "#222222" }
                     GradientStop { position: 1.0; color: "#111111" }
                 }
+
+
     ColumnLayout
     {
         id:first_Column
@@ -65,6 +68,8 @@ Rectangle
             //input text
             Rectangle
             {
+
+
                 id : input_Text_Frame
                 objectName :"input_Text_Frame"
                 width : 80
@@ -117,10 +122,10 @@ Rectangle
                 anchors.fill : parent
                 anchors.leftMargin: 10
                 anchors.topMargin: 10
-                clip:true                
+                clip:true
                 model : ToDoData
                 {
-                    id : mydata              
+                    id : mydata
                 }
                 delegate : Rectangle
                 {
@@ -130,7 +135,7 @@ Rectangle
                     CheckBox
                     {
                         id:check_Box
-                        checked:model.ischecked                        
+                        checked:model.ischecked
                         MouseArea
                         {
                             anchors.fill: parent
@@ -157,7 +162,7 @@ Rectangle
                                 color: check_Box.checked ?"#888888":"#ffffff"  //"white"
                                 //color:(index===list_View.clicked_Index)?"#555555":"#ffffff"
                                 font.pixelSize: 15
-                        }                        
+                        }
                     }
                 }
             }
